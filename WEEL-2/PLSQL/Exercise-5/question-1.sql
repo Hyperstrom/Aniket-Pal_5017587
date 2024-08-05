@@ -1,11 +1,25 @@
+--IMPORTANT MASSAGE 
+
+/*Because the user is SYSTEM so cannot create triggers on objects owned by the SYS user.
+It Rejects the Trigger 
+
+To resolve this, you should ensure that you are creating the trigger in a user schema rather than the SYS schema.
+1. Connect to non-SYS user Schema: In this case I connect to *DB_USER*
+2. create the tables for the TRIGGER 
+3. create the TRIGGER */
+
 -- Connect to the database as SYSDBA and grant necessary quota
 CONNECT SYS/&&ORCL_PASSWORD@&&DB_HOST AS SYSDBA;
+/*1. in the &&ORCL_PASSWORD paste your sys password as a String input
+2. in the &&DB_HOST paste the Database host */
 
 -- Grant execute permission on DBMS_LOCK to the user
 GRANT EXECUTE ON DBMS_LOCK TO &&DB_USER
 
 ALTER USER &&DB_USER QUOTA UNLIMITED ON USERS;
 CONNECT &&DB_USER/&&DB_PASSWORD@&&DB_HOST
+/*3.in the &&DB_PASSWORD paste the password of DB_USER*/
+
 
 -- Create the Customer table (if not already created)
 CREATE TABLE Customer (
