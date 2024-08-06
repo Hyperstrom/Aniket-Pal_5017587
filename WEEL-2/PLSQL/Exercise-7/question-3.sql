@@ -70,3 +70,13 @@ EXCEPTION
     DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
 END;
 /
+
+--Check the changes 
+-- Verify the account opened
+SELECT * FROM Accounts WHERE CUSTOMERID = 1 AND ACCOUNTTYPE = 'Checking';
+
+-- Verify the account closed
+SELECT * FROM Accounts WHERE ACCOUNTID = 1;
+
+-- Verify the total balance
+SELECT SUM(BALANCE) AS TOTAL_BALANCE FROM Accounts WHERE CUSTOMERID = 1;

@@ -1,0 +1,34 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-LibraryManagementApplication<com.libary.service.repository-libarymanagementsystem>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.library.LibraryManagementApplication",
+            "projectName": "com.libary.service.repository-libarymanagementsystem",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoApplication<com.example-demo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.demo.DemoApplication",
+            "projectName": "com.example-demo",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ExerciseApplication<com.example.exercise-exercise>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.exercise.exercise.ExerciseApplication",
+            "projectName": "com.example.exercise-exercise",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
