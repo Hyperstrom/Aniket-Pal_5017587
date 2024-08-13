@@ -6,13 +6,16 @@ Content-Type: application/json
   "name": "Software Development"
 }
 
-
+###
+POST http://localhost:8080/api/departments
 Content-Type: application/json
 
 {
   "name": "Quality Assurance"
 }
 
+###
+POST http://localhost:8080/api/departments
 Content-Type: application/json
 
 {
@@ -55,8 +58,8 @@ Content-Type: application/json
   "lastName": "Smith",
   "email": "john.smith@example.com",
   "department": {
-    "id": 1,
-    "name": "Software Development"
+    "id": 2,
+    "name": "Research & Development"
   }
 }
 ### Create the second Employee 2 Dept. Research & Development 
@@ -94,7 +97,7 @@ GET http://localhost:8080/api/employees
 ###==================================================
 
 ### Get an Employee by ID
-GET http://localhost:8080/api/employees/1
+GET http://localhost:8080/api/employees/2
 
 ###==================================================
 
