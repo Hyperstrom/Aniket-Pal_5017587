@@ -1,0 +1,117 @@
+### Create a new Department
+POST http://localhost:8080/api/departments
+Content-Type: application/json
+
+{
+  "name": "Software Development"
+}
+
+
+Content-Type: application/json
+
+{
+  "name": "Quality Assurance"
+}
+
+Content-Type: application/json
+
+{
+  "name": "IT Support"
+}
+
+###==================================================
+
+### 2. Get all Departments
+GET http://localhost:8080/api/departments
+
+###==================================================
+
+###3.  Get a Department by ID
+GET http://localhost:8080/api/departments/2
+
+###==================================================
+
+###4.  Update a Department
+PUT http://localhost:8080/api/departments/2
+Content-Type: application/json
+
+{
+  "name": "Research & Development"
+}
+
+###====================================================
+
+### 5. Delete a Department
+DELETE http://localhost:8080/api/departments/1
+
+###====================================================
+
+### 6. Create a new Employee 1 Dept. Software Development
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "email": "john.smith@example.com",
+  "department": {
+    "id": 1,
+    "name": "Software Development"
+  }
+}
+### Create the second Employee 2 Dept. Research & Development 
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+  "firstName": "Jennifer",
+  "lastName": "Smith",
+  "email": "jenni.smith@example.com",
+  "department": {
+    "id": 2,
+    "name": "Research & Development"
+  }
+}
+
+### Create Another Employee 3 of Dept. IT support 
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+  "firstName": "Tony",
+  "lastName": "Stark",
+  "email": "Tony.Stark@example.com",
+  "department": {
+    "id": 3,
+    "name": "IT Support"
+  }
+}
+###==================================================
+
+### Get all Employees
+GET http://localhost:8080/api/employees
+
+###==================================================
+
+### Get an Employee by ID
+GET http://localhost:8080/api/employees/1
+
+###==================================================
+
+### Update an Employee
+PUT http://localhost:8080/api/employees/2
+Content-Type: application/json
+
+{
+  "firstName": "Jannefer ",
+  "lastName": "Lawrence",
+  "email": "jannefer.Lawrence@example.com",
+  "department": {
+    "id": 2
+  }
+}
+
+###===================================================
+
+### Delete an Employee
+DELETE http://localhost:8080/api/employees/1
