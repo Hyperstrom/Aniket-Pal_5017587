@@ -1,0 +1,174 @@
+### Create Departments
+
+POST http://localhost:8080/api/departments
+Content-Type: application/json
+
+{
+  "name": "Human Resources"
+}
+
+###
+
+POST http://localhost:8080/api/departments
+Content-Type: application/json
+
+{
+  "name": "Engineering"
+}
+
+###
+
+POST http://localhost:8080/api/departments
+Content-Type: application/json
+
+{
+  "name": "Marketing"
+}
+
+### Create Employees
+
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "department": {
+    "id": 1
+  }
+}
+
+###
+
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+  "firstName": "Jane",
+  "lastName": "Smith",
+  "email": "jane.smith@example.com",
+  "department": {
+    "id": 2
+  }
+}
+
+###
+
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+  "firstName": "Alice",
+  "lastName": "Johnson",
+  "email": "alice.johnson@example.com",
+  "department": {
+    "id": 3
+  }
+}
+
+###
+
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+  "firstName": "Bob",
+  "lastName": "Brown",
+  "email": "bob.brown@example.com",
+  "department": {
+    "id": 1
+  }
+}
+
+###
+
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+  "firstName": "Charlie",
+  "lastName": "Davis",
+  "email": "charlie.davis@example.com",
+  "department": {
+    "id": 2
+  }
+}
+
+###
+
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+  "firstName": "David",
+  "lastName": "Miller",
+  "email": "david.miller@example.com",
+  "department": {
+    "id": 3
+  }
+}
+
+###
+
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+  "firstName": "Eve",
+  "lastName": "Wilson",
+  "email": "eve.wilson@example.com",
+  "department": {
+    "id": 1
+  }
+}
+
+###
+
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+  "firstName": "Frank",
+  "lastName": "Moore",
+  "email": "frank.moore@example.com",
+  "department": {
+    "id": 2
+  }
+}
+
+###
+
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+  "firstName": "Grace",
+  "lastName": "Taylor",
+  "email": "grace.taylor@example.com",
+  "department": {
+    "id": 3
+  }
+}
+
+###
+
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+  "firstName": "Hank",
+  "lastName": "Anderson",
+  "email": "hank.anderson@example.com",
+  "department": {
+    "id": 1
+  }
+}
+
+
+### Get Employees Sorted by First Name and Last Name
+
+GET http://localhost:8080/api/employees?page=1&size=5&sortBy=lastName&sortDirection=desc
+
+###
+GET http://localhost:8080/api/employees?page=1&size=5&sortBy=firstName&sortDirection=desc
