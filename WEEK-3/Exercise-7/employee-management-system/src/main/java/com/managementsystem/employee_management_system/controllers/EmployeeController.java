@@ -1,5 +1,7 @@
 package com.managementsystem.employee_management_system.controllers;
 
+import com.managementsystem.employee_management_system.repositories.DepartmentRepository;
+import com.managementsystem.employee_management_system.entities.Department;
 import com.managementsystem.employee_management_system.entities.Employee;
 import com.managementsystem.employee_management_system.responce.ApiResponse;
 import com.managementsystem.employee_management_system.repositories.EmployeeRepository;
@@ -21,6 +23,9 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepository employeeRepository;
 
+    @Autowired
+    private DepartmentRepository departmentRepository;  // Inject DepartmentRepository
+
     @PersistenceContext
     private EntityManager entityManager;
 
@@ -40,10 +45,16 @@ public class EmployeeController {
 
     @PostMapping
     public ResponseEntity<ApiResponse<Employee>> createEmployee(@RequestBody Employee employee) {
+        // Ensure department is fully loaded from the database
+        Department department = departmentRepository.findById(employee.getDepartment().getId())
+                .orElseThrow(() -> new RuntimeException("Department not found"));
+        employee.setDepartment(department);
+
         Employee savedEmployee = employeeRepository.save(employee);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(new ApiResponse<>("Employee created successfully", savedEmployee));
     }
+
 
     @PutMapping("/{id}")
     public ResponseEntity<ApiResponse<Employee>> updateEmployee(@PathVariable Long id, @RequestBody Employee employeeDetails) {
@@ -53,7 +64,12 @@ public class EmployeeController {
             employee.setFirstName(employeeDetails.getFirstName());
             employee.setLastName(employeeDetails.getLastName());
             employee.setEmail(employeeDetails.getEmail());
-            employee.setDepartment(employeeDetails.getDepartment());
+
+            // Ensure department is fully loaded from the database
+            Department department = departmentRepository.findById(employeeDetails.getDepartment().getId())
+                    .orElseThrow(() -> new RuntimeException("Department not found"));
+            employee.setDepartment(department);
+
             Employee updatedEmployee = employeeRepository.save(employee);
             return ResponseEntity.ok(new ApiResponse<>("Employee updated successfully", updatedEmployee));
         } else {
@@ -61,6 +77,7 @@ public class EmployeeController {
                     .body(new ApiResponse<>("Employee not found", null));
         }
     }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<ApiResponse<Void>> deleteEmployee(@PathVariable Long id) {

@@ -1,0 +1,14 @@
+com\example\employeemanagementsystem\EmployeemanagementsystemApplication.class
+com\example\employeemanagementsystem\repository\EmployeeProjection.class
+com\example\employeemanagementsystem\entity\Department.class
+com\example\employeemanagementsystem\controller\BatchController.class
+com\example\employeemanagementsystem\repository\DepartmentRepository.class
+com\example\employeemanagementsystem\HomeController.class
+com\example\employeemanagementsystem\config\JpaConfig.class
+com\example\employeemanagementsystem\config\SecondaryDataSourceConfig.class
+com\example\employeemanagementsystem\controller\EmployeeController.class
+com\example\employeemanagementsystem\repository\EmployeeRepository.class
+com\example\employeemanagementsystem\controller\DepartmentController.class
+com\example\employeemanagementsystem\config\PrimaryDataSourceConfig.class
+com\example\employeemanagementsystem\entity\Employee.class
+com\example\employeemanagementsystem\service\BatchService.class
