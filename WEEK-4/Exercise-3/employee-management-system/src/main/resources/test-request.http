@@ -1,0 +1,91 @@
+### 1. Create a new Department
+POST http://localhost:8080/api/departments
+Content-Type: application/json
+
+{
+  "name": "Engineering"
+}
+
+Content-Type: application/json
+
+{
+  "name": "Technical"
+}
+###==================================================
+
+### 2. Get all Departments
+GET http://localhost:8080/api/departments
+
+###==================================================
+
+###3.  Get a Department by ID
+GET http://localhost:8080/api/departments/1
+
+###==================================================
+
+###4.  Update a Department
+PUT http://localhost:8080/api/departments/1
+Content-Type: application/json
+
+{
+  "name": "Research & Development"
+}
+
+###====================================================
+
+### 5. Delete a Department
+DELETE http://localhost:8080/api/departments/1
+
+###====================================================
+
+### 6. Create a new Employee 1 
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "departmentId": 1
+}
+
+### Create the second Employee 2 
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+  "firstName": "Tom",
+  "lastName": "Cruise",
+  "email": "Tom.Cruise@example.com",
+  "departmentId": 2
+}
+
+###==================================================
+
+### Get all Employees
+GET http://localhost:8080/api/employees
+
+###==================================================
+
+### Get an Employee by ID
+GET http://localhost:8080/api/employees/1
+
+###==================================================
+
+### Update an Employee
+PUT http://localhost:8080/api/employees/1
+Content-Type: application/json
+
+{
+  "firstName": "Jannefer ",
+  "lastName": "Doe",
+  "email": "jannefer.doe@example.com",
+  "department": {
+    "id": 1
+  }
+}
+
+###===================================================
+
+### Delete an Employee
+DELETE http://localhost:8080/api/employees/1
