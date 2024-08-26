@@ -1,0 +1,49 @@
+### Get all books
+GET http://localhost:8080/api/books
+
+### Add a new book - Book 1
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Harry Potter and the Sorcerer's Stone",
+  "author": "J.K. Rowling",
+  "price": 19.99
+}
+
+### Add a new book - Book 2
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "id": 2,
+  "title": "The Hobbit",
+  "author": "J.R.R. Tolkien",
+  "price": 15.99
+}
+
+### Add a new book - Book 3
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "id": 3,
+  "title": "Alice's Adventures in Wonderland",
+  "author": "Lewis Carroll",
+  "price": 10.99
+}
+
+### Add a new book - Book 4
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "id": 4,
+  "title": "The Chronicles of Narnia",
+  "author": "C.S. Lewis",
+  "price": 25.99
+}
+
+### Get a book by ID (e.g., Book 2)
+GET http://localhost:8080/api/books/4

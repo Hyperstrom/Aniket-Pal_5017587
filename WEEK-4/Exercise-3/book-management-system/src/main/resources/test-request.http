@@ -1,0 +1,84 @@
+# Create a new book (POST)
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+    "title": "Book One",
+    "author": "Author A",
+    "price": 19.99,
+    "isbn": "1234567890123"
+}
+
+### Create another book (POST)
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+    "title": "Book Two",
+    "author": "Author B",
+    "price": 29.99,
+    "isbn": "1234567890124"
+}
+
+#### Create a third book (POST)
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+    "title": "Book Three",
+    "author": "Author C",
+    "price": 39.99,
+    "isbn": "1234567890125"
+}
+
+#### Create a fourth book (POST)
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+    "title": "Book Four",
+    "author": "Author D",
+    "price": 49.99,
+    "isbn": "1234567890126"
+}
+
+#### Create a fifth book (POST)
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+    "title": "Book Five",
+    "author": "Author E",
+    "price": 59.99,
+    "isbn": "1234567890127"
+}
+
+#### Get all books (GET)
+GET http://localhost:8080/books
+
+### Get a single book by ID (GET)
+GET http://localhost:8080/books/2
+
+### Update a book by ID (PUT)
+PUT http://localhost:8080/books/2
+Content-Type: application/json
+
+{
+    "title": "Updated Book Title",
+    "author": "Updated Author",
+    "price": 99.99,
+    "isbn": "1234567890128"
+}
+
+#### Delete a book by ID (DELETE)
+DELETE http://localhost:8080/books/3
+
+###Search the books from the 
+###
+GET http://localhost:8080/books/search?title=Book%20Two
+
+###
+GET http://localhost:8080/books/search?author=Author%20C
+
+###
+GET http://localhost:8080/books/search?title=Book%20Four&author=Author%20D
