@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-BookManagementSystemApplication<book-management-system>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.managementsystem.book_management_system.BookManagementSystemApplication",
+            "projectName": "book-management-system",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

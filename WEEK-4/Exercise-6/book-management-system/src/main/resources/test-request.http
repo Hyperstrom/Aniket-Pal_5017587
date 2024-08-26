@@ -1,0 +1,86 @@
+### Get all books
+GET http://localhost:8080/books
+Accept: application/json
+
+###
+
+### Get a book by ID (Existing Book)
+GET http://localhost:8080/books/1
+Accept: application/json
+
+###
+
+### Get a book by ID (Non-existing Book to trigger 404 Not Found)
+GET http://localhost:8080/books/9999
+Accept: application/json
+
+###
+
+### Create a new book
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "title": "New Book",
+  "author": "John Doe",
+  "price": 19.99,
+  "isbn": "1234567890123"
+}
+
+###
+
+### Update an existing book (Existing Book)
+PUT http://localhost:8080/books/1
+Content-Type: application/json
+
+{
+  "title": "Updated Book Title",
+  "author": "John Doe",
+  "price": 29.99,
+  "isbn": "1234567890123"
+}
+
+###
+
+### Update a non-existing book to trigger 404 Not Found
+PUT http://localhost:8080/books/9999
+Content-Type: application/json
+
+{
+  "title": "Non-existing Book",
+  "author": "Jane Doe",
+  "price": 24.99,
+  "isbn": "9876543210987"
+}
+
+###
+
+### Delete a book by ID (Existing Book)
+DELETE http://localhost:8080/books/1
+Accept: application/json
+
+###
+
+### Delete a book by ID (Non-existing Book to trigger 404 Not Found)
+DELETE http://localhost:8080/books/9999
+Accept: application/json
+
+###
+
+### Register a new customer with JSON
+POST http://localhost:8080/customers/register-json
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "email": "jane.doe@example.com",
+  "password": "password123"
+}
+
+###
+
+### Register a new customer with form data
+POST http://localhost:8080/customers/register-form
+Content-Type: application/x-www-form-urlencoded
+
+name=John+Doe&email=john.doe%40example.com&password=password123

@@ -1,0 +1,56 @@
+# Testing Book Endpoints
+
+## GET: Retrieve all books
+GET http://localhost:8080/books
+Accept: application/json
+
+## GET: Retrieve a book by ID
+GET http://localhost:8080/books/1
+Accept: application/json
+
+## POST: Create a new book
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "title": "New Book Title",
+  "author": "Author Name",
+  "price": 19.99,
+  "isbn": "1234567890123"
+}
+
+## PUT: Update an existing book
+PUT http://localhost:8080/books/1
+Content-Type: application/json
+
+{
+  "title": "Updated Book Title",
+  "author": "Updated Author Name",
+  "price": 25.99,
+  "isbn": "9876543210987"
+}
+
+## DELETE: Delete a book
+DELETE http://localhost:8080/books/1
+
+## GET: Filter books by title and/or author
+GET http://localhost:8080/books/search?title=Book Title&author=Author Name
+Accept: application/json
+
+# Testing Customer Endpoints
+
+## POST: Register a new customer via JSON
+POST http://localhost:8080/customers/register-json
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "password": "password123"
+}
+
+## POST: Register a new customer via Form Data
+POST http://localhost:8080/customers/register-form
+Content-Type: application/x-www-form-urlencoded
+
+name=Jane Doe&email=jane.doe@example.com&password=password456

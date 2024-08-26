@@ -1,0 +1,52 @@
+### Retrieve all books
+GET http://localhost:8080/books
+Accept: application/json
+
+### Retrieve a book by ID
+GET http://localhost:8080/books/1
+Accept: application/json
+
+### Create a new book
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "title": "New Book Title",
+  "author": "Author Name",
+  "price": 29.99,
+  "isbn": "123-4567890123"
+}
+
+### Update an existing book
+PUT http://localhost:8080/books/1
+Content-Type: application/json
+
+{
+  "title": "Updated Book Title",
+  "author": "Updated Author Name",
+  "price": 35.99,
+  "isbn": "123-4567890123"
+}
+
+### Delete a book by ID
+DELETE http://localhost:8080/books/1
+
+### Search books by title
+GET http://localhost:8080/books/search?title=New
+Accept: application/json
+
+### Register a new customer using JSON
+POST http://localhost:8080/customers/register-json
+Content-Type: application/json
+
+{
+  "name": "Customer Name",
+  "email": "customer@example.com",
+  "password": "securepassword"
+}
+
+### Register a new customer using form data
+POST http://localhost:8080/customers/register-form
+Content-Type: application/x-www-form-urlencoded
+
+name=Form%20Customer&email=formcustomer%40example.com&password=securepassword
